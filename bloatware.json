@@ -1,0 +1,41 @@
+{
+  "_comment": "Pacotes Appx a remover. Aceita curingas (*). Mude 'enabled' para true/false. Store, Calculadora, Fotos e Bloco de Notas NAO estao na lista de proposito.",
+  "packages": [
+    { "name": "Bing Noticias",              "pattern": "Microsoft.BingNews",                    "enabled": true },
+    { "name": "Bing Clima",                 "pattern": "Microsoft.BingWeather",                 "enabled": true },
+    { "name": "Bing Financas/Esportes",     "pattern": "Microsoft.Bing*",                       "enabled": true },
+    { "name": "Obter Ajuda",                "pattern": "Microsoft.GetHelp",                     "enabled": true },
+    { "name": "Dicas (Get Started)",        "pattern": "Microsoft.Getstarted",                  "enabled": true },
+    { "name": "Microsoft 365 (Office Hub)", "pattern": "Microsoft.MicrosoftOfficeHub",          "enabled": true },
+    { "name": "Solitaire Collection",       "pattern": "Microsoft.MicrosoftSolitaireCollection","enabled": true },
+    { "name": "Pessoas",                    "pattern": "Microsoft.People",                      "enabled": true },
+    { "name": "Hub de Comentarios",         "pattern": "Microsoft.WindowsFeedbackHub",          "enabled": true },
+    { "name": "Groove Musica",              "pattern": "Microsoft.ZuneMusic",                   "enabled": true },
+    { "name": "Filmes e TV",                "pattern": "Microsoft.ZuneVideo",                   "enabled": true },
+    { "name": "Mixed Reality Portal",       "pattern": "Microsoft.MixedReality.Portal",         "enabled": true },
+    { "name": "Visualizador 3D / 3D Builder","pattern": "Microsoft.3DBuilder",                  "enabled": true },
+    { "name": "Visualizador 3D",            "pattern": "Microsoft.Microsoft3DViewer",           "enabled": true },
+    { "name": "Skype",                      "pattern": "Microsoft.SkypeApp",                    "enabled": true },
+    { "name": "Mapas",                      "pattern": "Microsoft.WindowsMaps",                 "enabled": true },
+    { "name": "Cortana",                    "pattern": "Microsoft.549981C3F5F10",               "enabled": true },
+    { "name": "Clipchamp",                  "pattern": "Clipchamp.Clipchamp",                   "enabled": true },
+    { "name": "Teams (pessoal)",            "pattern": "MicrosoftTeams",                        "enabled": true },
+    { "name": "Microsoft Family",           "pattern": "MicrosoftCorporationII.MicrosoftFamily","enabled": true },
+    { "name": "Power Automate",             "pattern": "Microsoft.PowerAutomateDesktop",        "enabled": true },
+
+    { "name": "Candy Crush & jogos King",   "pattern": "*king.com*",                            "enabled": true },
+    { "name": "TikTok",                     "pattern": "*TikTok*",                              "enabled": true },
+    { "name": "Facebook / Instagram",       "pattern": "*Facebook*",                            "enabled": true },
+    { "name": "Instagram",                  "pattern": "*Instagram*",                           "enabled": true },
+    { "name": "Netflix",                    "pattern": "*Netflix*",                             "enabled": true },
+    { "name": "Disney+",                    "pattern": "*Disney*",                              "enabled": true },
+    { "name": "Prime Video",                "pattern": "AmazonVideo.PrimeVideo",                "enabled": true },
+    { "name": "LinkedIn",                   "pattern": "*LinkedIn*",                            "enabled": true },
+
+    { "name": "Phone Link (Seu Telefone)",  "pattern": "Microsoft.YourPhone",                   "enabled": false },
+    { "name": "Microsoft To Do",            "pattern": "Microsoft.Todos",                       "enabled": false },
+    { "name": "Outlook (novo)",             "pattern": "Microsoft.OutlookForWindows",           "enabled": false },
+    { "name": "Spotify (Store)",            "pattern": "SpotifyAB.SpotifyMusic",                "enabled": false },
+    { "name": "Xbox (app e Game Bar)",      "pattern": "Microsoft.Xbox*",                       "enabled": false }
+  ]
+}
