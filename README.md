@@ -27,7 +27,9 @@ e histórico da área de transferência (Win+V). Desfaça pelo ponto de restaura
 ## Remoção de bloatware (opcional)
 Nunca roda sozinha com `-All`: só com `-Debloat` ou pela opção 3/5 do menu.
 A lista está em `bloatware.json` (aceita curingas `*`, e `enabled` liga/desliga cada item).
-O script mostra o que será removido e pede confirmação. Loja, Calculadora, Fotos e
+O script mostra o que será removido e pede confirmação. Ao final, também remove o
+**OneDrive** (confirmação separada, com aviso sobre arquivos só na nuvem; sua pasta local
+não é apagada). Para pular, coloque `"removeOneDrive": false` no `bloatware.json`. Loja, Calculadora, Fotos e
 Bloco de Notas ficam de fora. Phone Link, To Do, Outlook, Spotify e Xbox vêm desativados
 na lista; ative se quiser removê-los. Tudo pode ser reinstalado pela Microsoft Store.
 

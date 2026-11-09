@@ -212,6 +212,36 @@ function Remove-Bloatware {
         }
     }
     Write-Host "`nApps removidos podem ser reinstalados pela Microsoft Store." -ForegroundColor DarkGray
+
+    if ($cfg.removeOneDrive) { Remove-OneDrive }
+}
+
+function Remove-OneDrive {
+    Write-Step "Removendo OneDrive"
+    Write-Host "ATENCAO: arquivos que existem so na nuvem (nao baixados) deixam de aparecer no PC." -ForegroundColor Yellow
+    Write-Host "Sua pasta OneDrive local NAO sera apagada, mas confirme que tudo esta sincronizado." -ForegroundColor Yellow
+    if ((Read-Host "`nRemover o OneDrive? (s/N)") -notmatch '^[sSyY]') { Write-Skip "cancelado"; return }
+
+    Stop-Process -Name OneDrive -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 2
+
+    $setup = @("$env:SystemRoot\SysWOW64\OneDriveSetup.exe", "$env:SystemRoot\System32\OneDriveSetup.exe") |
+             Where-Object { Test-Path $_ } | Select-Object -First 1
+    if ($setup) {
+        Start-Process $setup -ArgumentList '/uninstall' -Wait
+        Write-Ok "OneDrive desinstalado"
+    } else {
+        winget uninstall --id Microsoft.OneDrive -e --silent 2>$null | Out-Null
+        if ($LASTEXITCODE -eq 0) { Write-Ok "OneDrive desinstalado (winget)" }
+        else { Write-Skip "OneDrive nao encontrado" }
+    }
+
+    # impede reinstalacao automatica e remove do painel de navegacao do Explorer
+    Set-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive' 'DisableFileSyncNGSC' 1
+    $clsid = 'Registry::HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}'
+    if (Test-Path $clsid) { Set-ItemProperty $clsid -Name 'System.IsPinnedToNameSpaceTree' -Value 0 -ErrorAction SilentlyContinue }
+    Remove-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'OneDrive' -ErrorAction SilentlyContinue
+    Write-Ok "reinstalacao automatica bloqueada e atalho removido do Explorer"
 }
 
 # ======================================================================

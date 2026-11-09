@@ -1,5 +1,6 @@
 {
   "_comment": "Pacotes Appx a remover. Aceita curingas (*). Mude 'enabled' para true/false. Store, Calculadora, Fotos e Bloco de Notas NAO estao na lista de proposito.",
+  "removeOneDrive": true,
   "packages": [
     { "name": "Bing Noticias",              "pattern": "Microsoft.BingNews",                    "enabled": true },
     { "name": "Bing Clima",                 "pattern": "Microsoft.BingWeather",                 "enabled": true },
