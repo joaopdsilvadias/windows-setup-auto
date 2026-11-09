@@ -18,6 +18,7 @@
     { "name": "GitHub Desktop",       "id": "GitHub.GitHubDesktop",          "enabled": false },
     { "name": "Docker Desktop",       "id": "Docker.DockerDesktop",          "enabled": false },
     { "name": "Postman",              "id": "Postman.Postman",               "enabled": false },
+    { "name": "Yaak (cliente de API)","id": "Yaak.app",                      "enabled": true },
 
     { "name": "PowerToys",            "id": "Microsoft.PowerToys",           "enabled": true },
     { "name": "Everything (busca)",   "id": "voidtools.Everything",          "enabled": true },
